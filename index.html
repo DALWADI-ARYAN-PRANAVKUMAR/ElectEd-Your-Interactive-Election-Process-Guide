@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>ElectEd — Understand Every Step of an Election</title>
+  <meta name="description" content="Non-partisan civic education. Interactive election timeline, AI assistant, eligibility checker — understand democracy step by step."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" id="logoLink">
+        <span class="logo-mark">E</span>
+        <span class="logo-name">lect<span class="logo-accent">Ed</span></span>
+        <span class="logo-tag">·</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#process" class="nav-link">TIMELINE</a></li>
+        <li><a href="#eligibility" class="nav-link">ELIGIBILITY</a></li>
+        <li><a href="#assistant" class="nav-link">ASSISTANT</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-rule"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div id="particles" class="particles"></div>
+      <div class="hero-grid-overlay"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          NON-PARTISAN CIVIC EDUCATION · 2025–2026
+        </div>
+        <h1 class="hero-title">
+          Understand <em class="title-italic">every<br>step</em> of an<br>election.
+        </h1>
+        <p class="hero-sub">From voter registration to inauguration day — explore an interactive timeline and chat with an AI that explains how democracy actually works.</p>
+        <div class="hero-actions">
+          <a href="#process" class="btn-primary" id="exploreBtn">START EXPLORING ↓</a>
+          <a href="#assistant" class="btn-ghost" id="askBtn">ASK THE ASSISTANT</a>
+        </div>
+        <div class="hero-stats-mini">
+          <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Stages</span></div>
+          <div class="hstat-divider"></div>
+          <div class="hstat"><span class="hstat-n">24/7</span><span class="hstat-l">AI Support</span></div>
+          <div class="hstat-divider"></div>
+          <div class="hstat"><span class="hstat-n">0$</span><span class="hstat-l">Free</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="ballot-float" id="ballotCard">
+          <div class="ballot-hd">
+            <span class="ballot-icon">⚖️</span>
+            <div><div class="ballot-title">Official Ballot</div><div class="ballot-sub">General Election</div></div>
+          </div>
+          <div class="ballot-opts">
+            <div class="bopt selected"><span class="brad filled"></span>Candidate A ✓</div>
+            <div class="bopt"><span class="brad"></span>Candidate B</div>
+            <div class="bopt"><span class="brad"></span>Candidate C</div>
+          </div>
+          <div class="ballot-ft">
+            <div class="bpbar"><div class="bpfill"></div></div>
+            <span>Voter Turnout · 73%</span>
+          </div>
+        </div>
+        <div class="float-tag tag-top">🗓️ Nov 2026</div>
+        <div class="float-tag tag-bot">✅ Registered!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-cell">
+      <div class="snum">7</div><div class="slbl">ELECTION STAGES</div>
+    </div>
+    <div class="stat-cell">
+      <div class="snum">100%</div><div class="slbl">NON-PARTISAN</div>
+    </div>
+    <div class="stat-cell">
+      <div class="snum">AI</div><div class="slbl">POWERED TUTOR</div>
+    </div>
+    <div class="stat-cell">
+      <div class="snum">0$</div><div class="slbl">FREE TO USE</div>
+    </div>
+  </div>
+
+  <!-- PROCESS / TIMELINE -->
+  <section class="process-section" id="process">
+    <div class="section-inner">
+      <div class="process-hd">
+        <div class="proc-left">
+          <div class="section-tag">THE PROCESS</div>
+          <h2 class="section-serif-title">Seven stages,<br>from registration to<br>inauguration.</h2>
+        </div>
+        <div class="proc-right">
+          <p class="proc-hint">Click any stage. Get the steps. <a href="#assistant" class="text-link">Ask the assistant</a> for a deeper dive.</p>
+        </div>
+      </div>
+
+      <div class="stage-tabs" id="stageTabs">
+        <button class="stab active" data-stage="0" id="stab0"><span class="stab-n">01</span><span class="stab-name">VOTER<br>REGISTRATION</span></button>
+        <button class="stab" data-stage="1" id="stab1"><span class="stab-n">02</span><span class="stab-name">CANDIDATE<br>NOMINATION</span></button>
+        <button class="stab" data-stage="2" id="stab2"><span class="stab-n">03</span><span class="stab-name">CAMPAIGN<br>PERIOD</span></button>
+        <button class="stab" data-stage="3" id="stab3"><span class="stab-n">04</span><span class="stab-name">EARLY &amp;<br>POSTAL VOTING</span></button>
+        <button class="stab" data-stage="4" id="stab4"><span class="stab-n">05</span><span class="stab-name">ELECTION<br>DAY</span></button>
+        <button class="stab" data-stage="5" id="stab5"><span class="stab-n">06</span><span class="stab-name">COUNTING<br>&amp; RESULTS</span></button>
+        <button class="stab" data-stage="6" id="stab6"><span class="stab-n">07</span><span class="stab-name">CERTIFICATION<br>&amp; TRANSITION</span></button>
+      </div>
+
+      <div class="stage-content" id="stageContent">
+        <div class="stage-left">
+          <div class="stage-span" id="stageSpan"></div>
+          <h3 class="stage-title" id="stageTitle"></h3>
+          <p class="stage-desc" id="stageDesc"></p>
+          <button class="ask-stage-btn" id="askStageBtn">ASK THE ASSISTANT →</button>
+        </div>
+        <div class="stage-right">
+          <div class="stage-steps" id="stageSteps"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY -->
+  <section class="elig-section" id="eligibility">
+    <div class="section-inner elig-inner">
+      <div class="elig-left">
+        <div class="section-tag tag-light">ELIGIBILITY</div>
+        <h2 class="section-serif-title light">Are you<br>eligible<br>to vote?</h2>
+        <p class="elig-sub">Four quick questions to find out your status.</p>
+      </div>
+      <div class="elig-right">
+        <div class="elig-card" id="eligCard">
+          <div class="elig-qs" id="eligQs">
+            <div class="elig-q active" data-q="1">
+              <div class="eq-num">Q1 / 4</div>
+              <h4 class="eq-q">Are you 18 years of age or older?</h4>
+              <div class="eq-opts">
+                <button class="eq-opt" data-q="1" data-val="yes" id="eq1y">Yes</button>
+                <button class="eq-opt" data-q="1" data-val="no" id="eq1n">No</button>
+              </div>
+            </div>
+            <div class="elig-q" data-q="2">
+              <div class="eq-num">Q2 / 4</div>
+              <h4 class="eq-q">Are you a citizen of the country?</h4>
+              <div class="eq-opts">
+                <button class="eq-opt" data-q="2" data-val="yes" id="eq2y">Yes</button>
+                <button class="eq-opt" data-q="2" data-val="no" id="eq2n">No</button>
+              </div>
+            </div>
+            <div class="elig-q" data-q="3">
+              <div class="eq-num">Q3 / 4</div>
+              <h4 class="eq-q">Do you have a permanent residence?</h4>
+              <div class="eq-opts">
+                <button class="eq-opt" data-q="3" data-val="yes" id="eq3y">Yes</button>
+                <button class="eq-opt" data-q="3" data-val="no" id="eq3n">No</button>
+              </div>
+            </div>
+            <div class="elig-q" data-q="4">
+              <div class="eq-num">Q4 / 4</div>
+              <h4 class="eq-q">Do you have any felony convictions restricting voting?</h4>
+              <div class="eq-opts">
+                <button class="eq-opt" data-q="4" data-val="no" id="eq4n">No</button>
+                <button class="eq-opt" data-q="4" data-val="yes" id="eq4y">Yes</button>
+              </div>
+            </div>
+            <div class="elig-result hidden" id="eligResult"></div>
+          </div>
+          <div class="elig-footer">
+            <div class="elig-track"><div class="elig-fill" id="eligFill"></div></div>
+            <button class="restart-btn hidden" id="eligRestart">↺ START OVER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSISTANT -->
+  <section class="asst-section" id="assistant">
+    <div class="asst-bg">
+      <div class="asst-orb asst-orb1"></div>
+      <div class="asst-orb asst-orb2"></div>
+    </div>
+    <div class="section-inner asst-inner">
+      <div class="asst-hd">
+        <div class="asst-eyebrow"><span class="asst-ey-icon">⚡</span> CIVICS ASSISTANT</div>
+        <h2 class="section-serif-title light">Ask anything<br>about elections.</h2>
+      </div>
+      <div class="chat-shell" id="chatShell">
+        <div class="chat-msgs" id="chatMsgs">
+          <div class="chat-placeholder" id="chatPlaceholder">
+            <p class="ph-text">Try a starter question, click a stage above, or type your own.</p>
+            <div class="starter-qs" id="starterQs">
+              <button class="sq" data-q="How do I register to vote?" id="sq1">How do I register to vote?</button>
+              <button class="sq" data-q="What is a primary election?" id="sq2">What is a primary election?</button>
+              <button class="sq" data-q="How are votes counted?" id="sq3">How are votes counted?</button>
+              <button class="sq" data-q="What happens if a result is disputed?" id="sq4">What happens if a result is disputed?</button>
+              <button class="sq" data-q="Can I vote by mail?" id="sq5">Can I vote by mail?</button>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Type your question..." maxlength="300" aria-label="Ask about elections"/>
+          <button class="chat-send" id="chatSend" aria-label="Send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            SEND
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="faq-hd">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-serif-title">Common questions,<br>clear answers.</h2>
+      </div>
+      <div class="faq-cats" id="faqCats">
+        <button class="fcat active" data-cat="all" id="fcat0">All</button>
+        <button class="fcat" data-cat="registration" id="fcat1">Registration</button>
+        <button class="fcat" data-cat="voting" id="fcat2">Voting</button>
+        <button class="fcat" data-cat="candidates" id="fcat3">Candidates</button>
+        <button class="fcat" data-cat="results" id="fcat4">Results</button>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark sm">E</span>
+        <span class="logo-name">lect<span class="logo-accent">Ed</span></span>
+      </div>
+      <p class="footer-copy">Non-partisan civic education. Not affiliated with any government body.</p>
+      <p class="footer-note">🔒 No personal data stored.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+  <script src="app.js"></script>
+</body>
+</html>
