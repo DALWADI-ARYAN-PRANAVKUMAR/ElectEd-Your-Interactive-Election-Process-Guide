@@ -2,6 +2,14 @@
 
 > **Non-partisan civic education, reimagined.** ElectEd is a beautifully designed, fully interactive web application that walks every citizen through the complete election process — from voter registration to inauguration — with zero jargon and 24/7 AI support.
 
+## 🌐 Live Demo
+
+[![Live on Cloud Run](https://img.shields.io/badge/Live%20Demo-Google%20Cloud%20Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://elected-your-interactive-election-process-guide-790711561250.europe-west1.run.app)
+
+> 🔗 **[https://elected-your-interactive-election-process-guide-790711561250.europe-west1.run.app](https://elected-your-interactive-election-process-guide-790711561250.europe-west1.run.app)**
+>
+> Hosted on **Google Cloud Run** · Region: `europe-west1` · Served via **nginx:alpine** container · Auto-scales to zero when idle
+
 ---
 
 ## 📌 Project Overview
@@ -184,6 +192,29 @@ Then visit `http://localhost:8080` in your browser.
 
 > **Promt Wars — Challenge 2**
 > *"Create an assistant that helps users understand the election process, timelines, and steps in an interactive and easy-to-follow way."*
+
+---
+
+## ☁️ Deployment
+
+| Property | Value |
+|---|---|
+| **Platform** | Google Cloud Run |
+| **Region** | `europe-west1` |
+| **Container** | `nginx:alpine` |
+| **Port** | `8080` |
+| **Scaling** | Auto-scales to 0 when idle (cost-efficient) |
+| **HTTPS** | Automatic (managed by Google) |
+| **Live URL** | [Click to open ↗](https://elected-your-interactive-election-process-guide-790711561250.europe-west1.run.app) |
+
+### Files used for deployment
+
+```
+election/
+├── Dockerfile       ← Builds nginx:alpine container
+├── nginx.conf       ← nginx config (port 8080, gzip, caching)
+└── .dockerignore    ← Excludes .git and markdown from image
+```
 
 ---
 
