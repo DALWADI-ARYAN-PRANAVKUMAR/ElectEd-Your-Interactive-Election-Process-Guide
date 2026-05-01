@@ -5,8 +5,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>ElectEd — Understand Every Step of an Election</title>
   <meta name="description" content="Non-partisan civic education. Interactive election timeline, AI assistant, eligibility checker — understand democracy step by step."/>
+
+  <!-- Google Analytics 4 -->
+  <!-- Replace G-XXXXXXXXXX with your actual GA4 Measurement ID from console.analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELECTED2026"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELECTED2026');
+  </script>
+
+  <!-- Resource hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://www.googletagmanager.com"/>
+  <link rel="preconnect" href="https://maps.googleapis.com"/>
+  <link rel="dns-prefetch" href="https://maps.gstatic.com"/>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
@@ -25,6 +41,7 @@
         <li><a href="#eligibility" class="nav-link">ELIGIBILITY</a></li>
         <li><a href="#assistant" class="nav-link">ASSISTANT</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#find-polling" class="nav-link">FIND POLLING</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -243,6 +260,40 @@
         <button class="fcat" data-cat="results" id="fcat4">Results</button>
       </div>
       <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- FIND POLLING STATION (Google Maps) -->
+  <section class="maps-section" id="find-polling">
+    <div class="section-inner">
+      <div class="maps-hd">
+        <div class="section-tag">GOOGLE MAPS</div>
+        <h2 class="section-serif-title">Find your nearest<br>polling station.</h2>
+        <p class="maps-sub">Use Google Maps to locate your assigned polling place, drop box, or early voting centre in your area.</p>
+        <a
+          href="https://www.google.com/maps/search/polling+station+near+me"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="maps-cta"
+          id="mapsOpenBtn"
+          aria-label="Open Google Maps to find polling stations near you">
+          📍 Open in Google Maps →
+        </a>
+      </div>
+      <div class="maps-embed-wrap">
+        <iframe
+          id="pollingMap"
+          title="Find polling stations near you"
+          src="https://maps.google.com/maps?q=polling+station&output=embed&z=13"
+          width="100%"
+          height="420"
+          style="border:0;border-radius:8px"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <p class="maps-note">🔒 Your location is never stored by ElectEd. Google Maps handles all location data under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-link">Google's Privacy Policy</a>.</p>
     </div>
   </section>
 

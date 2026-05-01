@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>ElectEd — Test Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',system-ui,sans-serif;background:#08091a;color:#fafafa;min-height:100vh;padding:2rem}
+    .ts-header{border-bottom:3px solid #F5D90A;padding-bottom:1.5rem;margin-bottom:2rem}
+    .ts-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+    .ts-lmark{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+      background:#E8400C;color:#fff;font-weight:900;font-size:1.1rem;
+      clip-path:polygon(0 0,100% 0,100% 80%,80% 100%,0 100%)}
+    .ts-title{font-size:1.8rem;font-weight:800;letter-spacing:-.02em}
+    .ts-sub{color:#8892a4;font-size:.9rem;margin-top:.25rem}
+    .ts-badge{display:inline-block;background:#F5D90A;color:#000;font-size:.7rem;font-weight:800;
+      letter-spacing:.1em;padding:.2rem .6rem;border-radius:2px;margin-left:.75rem;vertical-align:middle}
+    #test-results{max-width:1100px}
+    .tr-table th{color:#8892a4;font-size:.75rem;letter-spacing:.1em;font-weight:700;border-bottom:2px solid #1a1a3a}
+    .tr-table td,th{padding:.55rem 1rem}
+    .tr-table tr:hover td{background:#0e1030}
+    .ts-run{display:inline-block;background:#6c63ff;color:#fff;border:none;padding:.75rem 2rem;
+      font-size:.85rem;font-weight:700;letter-spacing:.1em;border-radius:4px;cursor:pointer;
+      margin-bottom:1.5rem;transition:.2s}
+    .ts-run:hover{background:#5a52e0}
+    .ts-hint{color:#8892a4;font-size:.8rem;margin-bottom:1rem}
+  </style>
+</head>
+<body>
+  <div class="ts-header">
+    <div class="ts-logo">
+      <div class="ts-lmark">E</div>
+      <span class="ts-title">ElectEd</span>
+      <span class="ts-badge">TEST SUITE</span>
+    </div>
+    <p class="ts-sub">Unit tests for core logic — Knowledge Base · Stages · FAQ · Eligibility · KB Structure</p>
+  </div>
+
+  <p class="ts-hint">Tests run automatically on page load. Results shown below.</p>
+  <div id="test-results">
+    <p style="color:#8892a4;padding:2rem 0">⏳ Running tests...</p>
+  </div>
+
+  <script src="tests.js"></script>
+</body>
+</html>
