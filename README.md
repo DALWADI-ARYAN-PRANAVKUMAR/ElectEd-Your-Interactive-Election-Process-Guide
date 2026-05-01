@@ -187,27 +187,4 @@ Then visit `http://localhost:8080` in your browser.
 
 ---
 
-## ☁️ Deployment
-
-| Property | Value |
-|---|---|
-| **Platform** | Google Cloud Run |
-| **Region** | `europe-west1` |
-| **Container** | `nginx:alpine` |
-| **Port** | `8080` |
-| **Scaling** | Auto-scales to 0 when idle (cost-efficient) |
-| **HTTPS** | Automatic (managed by Google) |
-| **Live URL** | [Click to open ↗](https://elected-your-interactive-election-process-guide-790711561250.europe-west1.run.app) |
-
-### Files used for deployment
-
-```
-election/
-├── Dockerfile       ← Builds nginx:alpine container
-├── nginx.conf       ← nginx config (port 8080, gzip, caching)
-└── .dockerignore    ← Excludes .git and markdown from image
-```
-
----
-
 *© 2026 ElectEd — Built for civic education. Not affiliated with any government body. 🔒 No personal data stored.*
